@@ -1,9 +1,20 @@
+@font-face {
+  font-family: "Glysa";
+  src: url(../fonts/Glysa.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lexend Deca";
+  src: url(../fonts/LexendDeca-VariableFont_wght.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Glysa";
 }
 
 a {
@@ -15,12 +26,408 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
+.container {
+  background: #141414;
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+}
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  min-height: 100vh;
+}
+.main-content {
+  border: 1px solid #282828;
+}
+.left-top,
+.left-center,
+.right-top,
+.right-center,
+.main-top,
+.main-center {
+  height: 96px;
+}
+.left-center,
+.right-center,
+.main-center {
+  border-top: 1px solid #282828;
+  border-bottom: 1px solid #282828;
+  display: flex;
+  align-items: center;
+}
+.left-center {
+  justify-content: flex-end;
+  padding-right: 36.38px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.right-center {
+  justify-content: flex-start;
+  padding-left: 33.38px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.contact-container {
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-list-container {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.logo {
+  font-weight: 500;
+  font-size: 32px;
+}
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.btn {
+  padding: 8px 16px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 1000px;
+  border: 1px solid transparent;
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 13.25px;
+}
+.btn-type-1a {
+  border-radius: 8px;
+  background: #282828;
+}
+.btn-type-1b {
+  border-radius: 8px;
+  background: #2d2d2d;
+}
+.btn-type-1c {
+  border-radius: 8px;
+  background: #323232;
+}
+.btn-type-2a {
+  border-radius: 8px;
+  background: #141414;
+}
+.btn-type-2b {
+  border-radius: 8px;
+  background: #191919;
+}
+.btn-type-2c {
+  border-radius: 8px;
+  background: #1e1e1e;
+}
+.btn-type-3a {
+  border-radius: 1000px;
+  background: linear-gradient(180deg, rgba(40, 40, 40, 0.7) 0%, #282828 100%),
+    #141414;
+  border-radius: 1000px;
+}
+.btn-type-3b {
+  border-radius: 1000px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04)
+    ),
+    linear-gradient(180deg, rgba(40, 40, 40, 0.7) 0%, #282828 100%), #141414;
+}
+.btn-type-3c {
+  border-radius: 1000px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04)
+    ),
+    linear-gradient(180deg, rgba(40, 40, 40, 0.7) 0%, #282828 100%), #141414;
+}
+.icon {
+  font-size: 24px;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: 250ms ease-in-out;
+  cursor: pointer;
+}
+.contact-left {
+  display: flex;
+  gap: 16px;
+}
+.contact--user__image img {
+  border-radius: 50%;
+}
+.user-name {
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+.phone-number {
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.56);
+}
+.contact-right {
+  display: flex;
+  gap: 15px;
+  opacity: 0;
+}
+.contact.active .contact-right {
+  opacity: 1;
+}
+.contact:hover .contact-right {
+  opacity: 1;
+}
+.contact-single-actions {
+  position: relative;
+}
+.contact-single-wrapper {
+  position: absolute;
+  top: 40px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  display: none;
+  margin-top: 10px;
+  z-index: 10;
+}
+.contact-single-wrapper button {
+  width: 100%;
+}
+.contact-single-wrapper.active {
+  display: block;
+}
+
+.modal__wrap {
+  position: fixed;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  overflow-x: hidden;
+  background-color: rgba(31, 32, 41, 0.75);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms 500ms ease;
+}
+
+.visible {
+  pointer-events: auto;
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.modal {
+  padding: 24px;
+  position: absolute;
+  width: 364px;
+  height: 540px;
+  background: #141414;
+  border-radius: 8px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  align-self: center;
+  box-shadow: 0 12px 25px 0 rgba(199, 175, 189, 0.25);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 250ms 250ms ease, transform 300ms 250ms ease;
+  transform: scale(0);
+}
+
+.visible .modal {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 250ms 500ms ease, transform 350ms 500ms ease;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.modal-header img {
+  border-radius: 50%;
+}
+.form-row {
+  margin: 24px 0;
+}
+.form-row label {
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.56);
+}
+.form-row input {
+  background: #1e1e1e;
+  border: 1px solid #282828;
+  font-family: "Lexend Deca";
+  border-radius: 8px;
+  padding: 8px 12px;
+  width: 100%;
+  height: 40px;
+  margin-top: 4px;
+  outline: none;
+  color: #fff;
+}
+.form-row input::placeholder {
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.32);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 760px) {
+  .modal {
+    width: 70vw;
+    height: auto;
+    min-height: 433px;
+    min-width: 300px;
   }
 }
+
+@media screen and (max-width: 560px) {
+  .modal {
+    width: 80vw;
+    height: auto;
+    min-height: 433px;
+    min-width: 300px;
+  }
+}
+
+/*Loading start*/
+
+.loading {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  height: 25px;
+  width: 25px;
+  position: relative;
+  animation: rotate 5s infinite;
+}
+.ball {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.upper {
+  left: 0;
+  top: -22px;
+  background: #2da2ff;
+  animation: upper 1s linear infinite;
+}
+@keyframes upper {
+  50% {
+    top: 22px;
+  }
+  100% {
+    top: 22px;
+  }
+}
+.right {
+  right: -22px;
+  top: 0;
+  background: #ff337a;
+  animation: right 1s linear infinite;
+}
+@keyframes right {
+  50% {
+    right: 22px;
+  }
+  100% {
+    right: 22px;
+  }
+}
+.lower {
+  bottom: -22px;
+  left: 0;
+  background: #ffff00;
+  animation: lower 1s linear infinite;
+}
+@keyframes lower {
+  50% {
+    bottom: 22px;
+  }
+  100% {
+    bottom: 22px;
+  }
+}
+.left {
+  left: -22px;
+  top: 0;
+  background: #00ff00;
+  animation: left 1s linear infinite;
+}
+@keyframes left {
+  50% {
+    left: 22px;
+  }
+  100% {
+    left: 22px;
+  }
+}
+
+/*Loading End*/
